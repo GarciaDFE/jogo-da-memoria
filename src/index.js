@@ -1,27 +1,30 @@
-/* guarda a seleção da raiz do documento */
 const $root = document.querySelector("#root")
-/* guarda a criação de uma tag article */ 
-const $memoryCard = document.createElement("article")
+const $container = document.createElement("section")
 
-/* opção 1 de guardar uma string para criação da linha de uma tag em HTML para ser inserida
-const $icon = "<img class='icon' src = 'img/icon-collabcode.png' alt = 'imagem do mascote da CollabCode'>" */
+const $faceCard = `
+<article class="face-card">
+    <img class="icon" 
+        src="img/icon-c.png" 
+        alt="imagem da face do cartão da linguagem C++">
+</article>`;
+const $memoryCard = `
+<article class="memory-card">
+    <img class="icon" 
+        src="img/icon-collabcode.png"
+        alt="imagem do mascote da CollabCode">
+</article>`;
 
-/* opção 2 de guardar uma string usando TEMPLATE STRING para criação da linha de uma tag em HTML para ser inserida */
-const $icon =
-`<img
-    class='icon'
-    src='img/icon-collabcode.png'
-    alt='imagem do mascote da CollabCode'
->`
-
-/* atribui uma classe a tag criada */
-$memoryCard.classList.add("memory-card")
-
-/* opção 1 menos perfomático = método para inserir a tag da imagem dentro do componente article
-$memoryCard.innerHTML = $icon   */
-
-/* insere o elemento da tag criada na página */
-$root.insertBefore($memoryCard, null)
-
-/* opção 2 = método mais performático para inserir a tag da imagem dentro do componente com controle de posição */
-$memoryCard.insertAdjacentHTML("afterbegin", $icon)
+/* aplicando classe ao elemento criado */
+$container.classList.add("wrap-container")
+/* inclusão de HTML */
+$root.insertBefore($container, null)
+$container.insertAdjacentHTML("afterbegin", $faceCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)
+$container.insertAdjacentHTML("beforeend", $memoryCard)

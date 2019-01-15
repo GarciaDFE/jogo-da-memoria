@@ -1,0 +1,11 @@
+.wrap-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    width: 372px;
+    height: 850px;
+    margin: 20px auto;
+    padding: 5px;
+    border: 1px #dadada solid;
+}
