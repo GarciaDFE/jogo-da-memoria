@@ -14,17 +14,12 @@ const $memoryCard = `
         alt="imagem do mascote da CollabCode">
 </article>`;
 
+let ttlCards = 10
 /* aplicando classe ao elemento criado */
 $container.classList.add("wrap-container")
 /* inclusão de HTML */
 $root.insertBefore($container, null)
 $container.insertAdjacentHTML("afterbegin", $faceCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
-$container.insertAdjacentHTML("beforeend", $memoryCard)
+for (let i = 0; i < ttlCards - 1; i++) {
+    $container.insertAdjacentHTML("beforeend", $memoryCard)
+}
