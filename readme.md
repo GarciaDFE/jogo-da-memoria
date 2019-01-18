@@ -25,6 +25,9 @@ Desenvolvimento do projeto com foco na evolução de conceitos e apereiçoamento
 - `beforeend` &rarr; posição dentro do elemento, após seu último filho (childNode)
 - `afterend` &rarr; posição após o elemento
 
+### Boas práticas
+- A preocupação na refatoração para isolamento de elementos repetitivos no código é indicado (Martin Fowler) a partir da certeza da terceira ocorrência de repetição de elemento
+
 
 
 
