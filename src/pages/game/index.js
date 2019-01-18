@@ -1,9 +1,19 @@
-const numCards = 8 /* seta o número de cartões do jogo */
+const numCards = 8
 
 for (let i = 0; i < numCards; i++) {
   if (i == 0) {
-      createMemoryCardFront(); /* cria primeiro cartão com face revelada (frente) */
+      createMemoryCardFront();
   } else {
-      createMemoryCard(); /* cria cartão com face escondida (verso) */ 
+      createMemoryCard();
   }
+}
+
+const $Cards = document.querySelectorAll(".memory-card")
+
+$Cards.forEach(function($card, key) {
+    $card.addEventListener("click", mostrarFace)
+})
+
+function mostrarFace() {
+    console.log("Clicado em um cartão!!")
 }
