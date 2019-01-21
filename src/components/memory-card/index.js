@@ -1,27 +1,31 @@
-const createMemoryCard = () => {
-    return `
-        <article class="memory-card">
-            <img
-                class="icon" 
-                src="img/icon-collabcode.png"
-                alt="imagem do mascote da CollabCode" 
-                onclick="handleClick()">
-            
-        </article>
-        `;
-}
+let modificadora = ""
+let imgIcone = ""
+let altImagem = ""
 
-const createMemoryCardFront = () => {
+const createMemoryCard = (face) => {
+
+    /* controla as diferenças no template string conforme parâmetro */
+    if (face == "back") {
+        modificadora = ""
+        imgIcone = "icon-collabcode.png"
+        altImagem = "imagem do mascote da CollabCode"
+    } else if (face == "front") {
+        modificadora = "-front"
+        imgIcone = "icon-c.png"
+        altImagem = "imagem do livro de C++"
+        }
+
+    /* retorna o template string de acordo com o parâmetro */
     return `
-        <article class="memory-card -front">
+        <article class="memory-card ${modificadora}">
             <img
-                class="icon" 
-                src="img/icon-c.png"
-                alt="imagem do livro de C++"
+                class="icon"
+                src="img/${imgIcone}"
+                alt="${altImagem}"
                 onclick="handleClick()">
-        </article>
-        `;
-}
+            </article>`
+
+};
 
 function handleClick() {
     console.log("Clicado em um cartão!!")

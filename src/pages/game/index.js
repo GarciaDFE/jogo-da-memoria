@@ -1,17 +1,13 @@
 const $root = document.querySelector("#root");
-
 const $cardsWrapper = createCardsWrapper();
-const $memoryCard = createMemoryCard();
-const $memoryCardFront = createMemoryCardFront();
+const numCards = 8;
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);
 
-const numCards = 8
-
 for (let i = 0; i < numCards; i++) {
   if (i <= 5) {
-      $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+      $cardsWrapper.insertAdjacentHTML("beforeend", createMemoryCard("back"))
   } else {
-      $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
+      $cardsWrapper.insertAdjacentHTML("beforeend", createMemoryCard("front"))
   }
-}
+};
