@@ -1,24 +1,44 @@
 function createMemoryCard() {
-    const $memoryCard = document.createElement("article");
-    const $iconCollab = `
-        <img class="icon" 
-            src="img/icon-collabcode.png"
-            alt="imagem do mascote da CollabCode">
+    const $memoryCard = `
+        <article class="memory-card">
+            <img
+                class="icon" 
+                src="img/icon-collabcode.png"
+                alt="imagem do mascote da CollabCode" 
+                onclick="handleClick()">
+        </article
         `;
-    $memoryCard.classList.add("memory-card");
-    $wrapCards.insertBefore($memoryCard, null);
-    $memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
+    
+    return $memoryCard;
 }
 
 function createMemoryCardFront() {
-    const $memoryCardFront = document.createElement("article");
-    const $iconC = `
-        <img class="icon" 
-            src="img/icon-c.png"
-            alt="imagem do livro de C++">
+    const $memoryCard = `
+        <article class="memory-card -front">
+            <img
+                class="icon" 
+                src="img/icon-c.png"
+                alt="imagem do livro de C++"
+                onclick="handleClick()">
+        </article
         `;
-    $memoryCardFront.classList.add("memory-card");
-    $memoryCardFront.classList.add("-front");
-    $wrapCards.insertBefore($memoryCardFront, null);
-    $memoryCardFront.insertAdjacentHTML("afterbegin", $iconC);
+
+    return $memoryCard;
 }
+
+function handleClick() {
+    console.log("Clicado em um cartão!!")
+}
+
+
+/*
+const $Cards = document.querySelectorAll(".memory-card")
+
+$Cards.forEach(function($card, key) {
+    $card.addEventListener("click", mostrarFace)
+})
+
+function mostrarFace() {
+    console.log("Clicado em um cartão!!")
+}
+*/

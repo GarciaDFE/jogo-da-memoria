@@ -1,19 +1,17 @@
+const $root = document.querySelector("#root");
+
+const $cardsWrapper = createCardsWrapper();
+const $memoryCard = createMemoryCard();
+const $memoryCardFront = createMemoryCardFront();
+
+$root.insertAdjacentElement("beforeend", $cardsWrapper);
+
 const numCards = 8
 
 for (let i = 0; i < numCards; i++) {
-  if (i == 0) {
-      createMemoryCardFront();
+  if (i <= 5) {
+      $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
   } else {
-      createMemoryCard();
+      $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
   }
-}
-
-const $Cards = document.querySelectorAll(".memory-card")
-
-$Cards.forEach(function($card, key) {
-    $card.addEventListener("click", mostrarFace)
-})
-
-function mostrarFace() {
-    console.log("Clicado em um cartão!!")
 }
