@@ -1,10 +1,10 @@
+/* MEU CÓDIGO DOS DESAFIOS 
 let modificadora = ""
 let imgIcone = ""
 let altImagem = ""
 
 const createMemoryCard = (face) => {
 
-    /* controla as diferenças no template string conforme parâmetro */
     if (face == "back") {
         modificadora = ""
         imgIcone = "icon-collabcode.png"
@@ -15,7 +15,6 @@ const createMemoryCard = (face) => {
         altImagem = "imagem do livro de C++"
         }
 
-    /* retorna o template string de acordo com o parâmetro */
     return `
         <article class="memory-card ${modificadora}">
             <img
@@ -30,3 +29,61 @@ const createMemoryCard = (face) => {
 function handleClick() {
     console.log("Clicado em um cartão!!")
 }
+/* //////////////////////////////////// */
+
+/* PRIMEIRO CÓDIGO REFATORADO DO MARCO DOS DESAFIOS 
+const createMemoryCard = (nameClass) => {
+    let src = "img/icon-collabcode.png";
+    let alt = "imagem do mascote da CollabCode";
+
+    if (nameClass == "-front") {
+        src = "img/icon-c.png"
+        alt = "img/imagem do livro de C++"
+    }
+
+    return `
+        <article class="memory-card ${nameClass}">
+            <img
+                class="icon"
+                src="${src}"
+                alt="${alt}"
+                onclick="handleClick()">
+        </article>`
+
+};
+
+const handleClick = () => console.log("Clicado em um cartão!!")
+/* ////////////////////////////// */
+
+
+/* SEGUNDO CÓDIGO REFATORADO DO MARCO DOS DESAFIOS
+const createMemoryCard = nameClass => `
+        <article class="memory-card ${nameClass}">
+            <img
+                class="icon"
+                src="${
+                    nameClass == "-front" ? "img/icon-c.png" : "img/icon-collabcode.png"
+                }"
+                alt="${
+                    nameClass == "-front" ? "imagem do livro de C++" : "imagem do mascote da CollabCode"
+                }"
+                onclick="handleClick()">
+        </article>`;
+
+const handleClick = () => console.log("Clicado em um cartão!!")
+/* ////////////////////////////// */
+
+
+/* TERCEIRO CÓDIGO REFATORADO DO MARCO PARA TRANSFORMAR ESTE
+    COMPONENTE EM UM COMPONENTE BURRO (STATELESS) \o/ */
+const createMemoryCard = (src, alt, nameClass) => `
+        <article class="memory-card ${nameClass}">
+            <img
+                class="icon"
+                src="${src}"
+                alt="${alt}"
+                onclick="handleClick()">
+        </article>`;
+
+const handleClick = () => console.log("Clicado em um cartão!!")
+/* ////////////////////////////// */
