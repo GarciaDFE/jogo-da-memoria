@@ -14,8 +14,7 @@ function createCardsWrapper() {
             height: 900px;
             margin: 0 auto;
             border: 1px #dadada solid;
-        }
-    `
+        }`
     $head.insertBefore($style, null)
     
     return $cardsWrapper
