@@ -76,12 +76,12 @@ const handleClick = () => console.log("Clicado em um cartão!!")
 
 /* TERCEIRO CÓDIGO REFATORADO DO MARCO PARA TRANSFORMAR ESTE
     COMPONENTE EM UM COMPONENTE BURRO (STATELESS) \o/ */
-const createMemoryCard = (src, alt, nameClass) => `
-        <article class="memory-card ${nameClass}">
+const createMemoryCard = (card) => `
+        <article class="memory-card ${card.nameClass}">
             <img
                 class="icon"
-                src="${src}"
-                alt="${alt}"
+                src="${card.src}"
+                alt="${card.alt}"
                 onclick="handleClick()">
         </article>`;
 
