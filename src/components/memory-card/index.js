@@ -31,6 +31,7 @@ function handleClick() {
 }
 /* //////////////////////////////////// */
 
+
 /* PRIMEIRO CÓDIGO REFATORADO DO MARCO DOS DESAFIOS 
 const createMemoryCard = (nameClass) => {
     let src = "img/icon-collabcode.png";
@@ -56,6 +57,7 @@ const handleClick = () => console.log("Clicado em um cartão!!")
 /* ////////////////////////////// */
 
 
+
 /* SEGUNDO CÓDIGO REFATORADO DO MARCO DOS DESAFIOS
 const createMemoryCard = nameClass => `
         <article class="memory-card ${nameClass}">
@@ -74,8 +76,9 @@ const handleClick = () => console.log("Clicado em um cartão!!")
 /* ////////////////////////////// */
 
 
+
 /* TERCEIRO CÓDIGO REFATORADO DO MARCO PARA TRANSFORMAR ESTE
-    COMPONENTE EM UM COMPONENTE BURRO (STATELESS) \o/ */
+    COMPONENTE EM UM COMPONENTE BURRO (STATELESS) \o/
 const createMemoryCard = (card) => `
         <article class="memory-card ${card.nameClass}">
             <img
@@ -87,3 +90,40 @@ const createMemoryCard = (card) => `
 
 const handleClick = () => console.log("Clicado em um cartão!!")
 /* ////////////////////////////// */
+
+
+
+/* QUARTO CÓDIGO DO MARCO REFATORANDO O COMPONENTE STATELESS
+   USANDO OBJECT DESTRUCTURING 
+
+const createMemoryCard = (card) => {
+    const {src, alt, nameClass} = card;
+    return `
+        <article class="memory-card ${card.nameClass}">
+            <img
+                class="icon"
+                src="${card.src}"
+                alt="${card.alt}"
+                onclick="handleClick()">
+        </article>`
+};
+
+const handleClick = () => console.log("Clicado em um cartão!!")
+
+/* ///////////////////////////////////// */
+
+/* QUINTO E ÚLTIMO CÓDIGO DO MARCO REFATORANDO O COMPONENTE STATELESS
+   USANDO OBJECT DESTRUCTURING AGORA COMO PARÂMETRO \o/ \o/ */
+
+const createMemoryCard = ({ src, alt, nameClass }) => `
+        <article class="memory-card ${nameClass}">
+            <img
+                class="icon"
+                src="${src}"
+                alt="${alt}"
+                onclick="handleClick()">
+        </article>`
+
+const handleClick = () => console.log("Clicado em um cartão!!")
+
+/* ///////////////////////////////////// */
