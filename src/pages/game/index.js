@@ -1,8 +1,7 @@
 const $root = document.querySelector("#root");
 const $cardsWrapper = createCardsWrapper();
-const numCards = 8;
 
-$root.insertAdjacentElement("beforeend", $cardsWrapper);
+const createMemoryCard = memoryCard() /* retorna a possibilidade de criar cards */
 
 const $memoryCardC = createMemoryCard({
     src: "img/icon-c.png", 
@@ -64,13 +63,15 @@ const $memoryCardSettings = createMemoryCard({
     nameClass: "-front" 
 });
 
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC)
+$root.insertAdjacentElement("beforeend", $cardsWrapper);
+
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS)
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava)
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardCabeca)
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp)
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardCelular)
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBug)
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardResponsivo)
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman)
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardSettings)
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
