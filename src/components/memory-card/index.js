@@ -3,24 +3,40 @@ const memoryCard = () => {
         const $style = document.createElement("style");
         $style.textContent = `
                 .memory-card {
+                        width: 155px;
+                        height: 155px;  
+                        position: relative;
+                        
+                }
+                .memory-card .card {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        width: 155px;
-                        height: 155px;  
+                        width: 100%;
+                        height: 100%;  
                         background-color: #f25a70;
                         border-radius: 30px;
                         box-shadow: 0 3px 6px 0 #00000029;
                         position: relative;
-                        margin: 10px;
                         cursor: pointer;
+                        position: absolute;
+                        margin-top: 10px;
                 }
 
-                .memory-card.-front {
+                .memory-card.-active .card {
+                        display: none;
+                }
+
+                .memory-card.-active .card.-front {
+                        display: flex;
+                }
+
+                .memory-card .card.-front {
                         background-color: #fff;
                 }
 
-                .memory-card.-front::before {
+
+                .memory-card .card.-front::before {
                         position: absolute;
                         content:'';
                         width: 95px;
@@ -29,28 +45,36 @@ const memoryCard = () => {
                         border-radius: 50%;
                 }
 
-                .memory-card > .icon {
+                .memory-card .card > .icon {
                         width: 110px;
                         height: 110px;
                 }
 
-                .memory-card.-front > .icon {
+                .memory-card .card.-front > .icon {
                         position: absolute;
                         width: 97px;
                         height: 97px;
                         transform: translateY(-12px);
-                }`
+                }`;
+
         $head.insertBefore($style, null)
         
-        return ({ src, alt, nameClass }) => `
-                <article class="memory-card ${nameClass}">
-                <img
-                        class="icon"
-                        src="${src}"
-                        alt="${alt}"
-                        onclick="handleClick()">
-                </article>
+        return ({ src, alt }) => `
+                <div class="memory-card" onclick="handleClick(this)">
+                        <article class="card -front">
+                        <img
+                                class="icon"
+                                src="${src}"
+                                alt="${alt}"
+                        </article>
+                        <article class="card">
+                        <img
+                                class="icon"
+                                src="img/icon-collabcode.png"
+                                alt="imagem do galinho da CollabCode"
+                        </article>
+                </div>
         `;
 }
 
-const handleClick = () => console.log("Clicado em um cartão!!");
+const handleClick = ($component) => $component.classList.toggle("-active")

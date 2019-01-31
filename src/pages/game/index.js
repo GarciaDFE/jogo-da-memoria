@@ -1,6 +1,5 @@
 const $root = document.querySelector("#root");
 const $cardsWrapper = createCardsWrapper();
-
 const createMemoryCard = memoryCard() /* retorna a possibilidade de criar cards */
 
 const $memoryCardC = createMemoryCard({
@@ -61,6 +60,12 @@ const $memoryCardSettings = createMemoryCard({
     src: "img/icon-settings.png", 
     alt: "imagem do livro sobre configurações", 
     nameClass: "-front" 
+});
+
+const $memoryCardCollab = createMemoryCard({
+    src: "img/icon-collabcode.png",
+    alt: "imagem do galo da CollabCode",
+    nameClass: ""
 });
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);

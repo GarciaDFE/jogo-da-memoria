@@ -11,10 +11,15 @@ function createCardsWrapper() {
             justify-content: space-around;
             align-content: flex-start;
             width: 372px;
-            height: 900px;
+            height: 850px;
             margin: 0 auto;
             border: 1px #dadada solid;
+        }
+        
+        .cards-wrapper > div {
+            margin-bottom: 10px;
         }`
+
     $head.insertBefore($style, null)
     
     return $cardsWrapper
