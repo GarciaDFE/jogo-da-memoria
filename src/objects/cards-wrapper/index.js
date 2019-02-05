@@ -1,4 +1,6 @@
 let qtdeMemoryCardActive = 0; /* váriavel colocada de forma global, fora só do contexto da função, para ser usada em outros componentes */
+let qtdeMemoryCardCorrect = 0
+let qtdeToGame = 0
 
 function createCardsWrapper() {
     const $cardsWrapper = document.createElement("section")
@@ -26,6 +28,8 @@ function createCardsWrapper() {
 
     $cardsWrapper.addEventListener("click", () => {
         qtdeMemoryCardActive = $cardsWrapper.querySelectorAll(".memory-card.-active").length;
+        qtdeMemoryCardCorrect = $cardsWrapper.querySelectorAll(".memory-card.-active.-yes").length;
+        qtdeToGame = qtdeMemoryCardActive - qtdeMemoryCardCorrect
     });
     
     return $cardsWrapper

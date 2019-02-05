@@ -31,10 +31,14 @@ const memoryCard = () => {
                         display: flex;
                 }
 
+                .memory-card.-active.-yes .card.-front {
+                        background-color: #d0fad5;
+
+                }
+
                 .memory-card .card.-front {
                         background-color: #fff;
                 }
-
 
                 .memory-card .card.-front::before {
                         position: absolute;
@@ -76,19 +80,26 @@ const memoryCard = () => {
                 </div>
         `;
 }
-
 const handleClick = ($component) => {
-        if (qtdeMemoryCardActive < 2) {
+        if (qtdeToGame < 2 && $component.classList.contains("-yes") == false) {
                 $component.classList.toggle("-active");
         }
 
-        if (qtdeMemoryCardActive == 1) {        
-                setTimeout(() => {
-                        const $activeMemoryCards = document.querySelectorAll(".memory-card.-active")                
-                        $activeMemoryCards.forEach($memoryCard => {
-                                $memoryCard.classList.remove("-active")
-                        })
-                        qtdeMemoryCardActive = 0;
-                }, 2000);
+        if (qtdeToGame == 1) {
+                const $activeMemoryCards = document.querySelectorAll(".memory-card.-active")
+                if ($activeMemoryCards[0].isEqualNode($activeMemoryCards[1])) {
+                        $activeMemoryCards.forEach($memoryCard => $memoryCard.classList.add("-yes"))
+                        qtdeToGame = 0
+                } else {
+                        setTimeout(() => {
+                                $activeMemoryCards.forEach($memoryCard => {
+                                        if ($memoryCard.classList.contains("-yes") == false) {
+                                                $memoryCard.classList.remove("-active");
+                                        }
+                                })
+                                qtdeToGame = 0;
+                        }, 2000);
+                }
         }
+        console.log(document.querySelectorAll(".-yes"))
 }
