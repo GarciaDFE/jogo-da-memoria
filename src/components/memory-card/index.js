@@ -78,12 +78,17 @@ const memoryCard = () => {
 }
 
 const handleClick = ($component) => {
-        const $cardActive = document.querySelectorAll(".memory-card.-active .card.-front");
-        let numClicks = $cardActive.length;
-        if (numClicks <= 1) {
-                $component.classList.toggle("-active")
+        if (qtdeMemoryCardActive < 2) {
+                $component.classList.toggle("-active");
         }
-        setTimeout(function() {
-                $component.classList.remove("-active");
-        }, 3000);
+
+        if (qtdeMemoryCardActive == 1) {        
+                setTimeout(() => {
+                        const $activeMemoryCards = document.querySelectorAll(".memory-card.-active")                
+                        $activeMemoryCards.forEach($memoryCard => {
+                                $memoryCard.classList.remove("-active")
+                        })
+                        qtdeMemoryCardActive = 0;
+                }, 2000);
+        }
 }
