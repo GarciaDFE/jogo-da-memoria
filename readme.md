@@ -25,6 +25,12 @@ Desenvolvimento do projeto com foco na evolução de conceitos e apereiçoamento
 - `beforeend` &rarr; posição dentro do elemento, após seu último filho (childNode)
 - `afterend` &rarr; posição após o elemento
 
+### IIFE - Immediately Invoked Function Expression
+- é um função anônima
+- auto-executável (auto-invocável)
+- não é possível ser executada/invocada novamente
+- qualquer acesso ao seu conteúdo fica bloqueado, não fica global, Seus elementos não podem ser acessados pelo terminal
+
 ### JSON - JavaScript Object Notation
 - tem o conceito de chave e valor
 
