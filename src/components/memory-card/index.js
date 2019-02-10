@@ -23,17 +23,14 @@ const memoryCard = () => {
                         margin-top: 10px;
                 }
 
-                .memory-card.-active .card {
+                .memory-card.-active .card,
+                .memory-card.-score .card {
                         display: none;
                 }
 
-                .memory-card.-active .card.-front {
+                .memory-card.-active .card.-front,
+                .memory-card.-score .card.-front {
                         display: flex;
-                }
-
-                .memory-card.-active.-yes .card.-front {
-                        background-color: #d0fad5;
-
                 }
 
                 .memory-card .card.-front {
@@ -80,26 +77,31 @@ const memoryCard = () => {
                 </div>
         `;
 }
+let score = 0;
 const handleClick = ($component) => {
-        if (qtdeToGame < 2 && $component.classList.contains("-yes") == false) {
-                $component.classList.toggle("-active");
-        }
+        if (!$component.classList.contains("-active")) {
+                if (qtdeMemoryCardActive < 2) {
+                        $component.classList.toggle("-active");
+                }
 
-        if (qtdeToGame == 1) {
-                const $activeMemoryCards = document.querySelectorAll(".memory-card.-active")
-                if ($activeMemoryCards[0].isEqualNode($activeMemoryCards[1])) {
-                        $activeMemoryCards.forEach($memoryCard => $memoryCard.classList.add("-yes"))
-                        qtdeToGame = 0
-                } else {
-                        setTimeout(() => {
-                                $activeMemoryCards.forEach($memoryCard => {
-                                        if ($memoryCard.classList.contains("-yes") == false) {
-                                                $memoryCard.classList.remove("-active");
-                                        }
+                if (qtdeMemoryCardActive == 1) {
+                        const $memoryCards = document.querySelectorAll(".memory-card.-active")
+                        if ($memoryCards[0].querySelector(".-front .icon").getAttribute("src") === $memoryCards[1].querySelector(".-front .icon").getAttribute("src")) {
+                                score++
+                                console.log(score)
+                                $memoryCards.forEach($memoryCard => {
+                                        $memoryCard.classList.remove("-active")
+                                        $memoryCard.classList.add("-score");
                                 })
-                                qtdeToGame = 0;
-                        }, 2000);
+                        } else {
+                                setTimeout(() => {
+                                        const $activeMemoryCards = document.querySelectorAll(".memory-card.-active")
+                                        $activeMemoryCards.forEach($memoryCard => {
+                                                $memoryCard.classList.remove("-active")
+                                        })
+                                        qtdeMemoryCardActive = 0;
+                                }, 2000);
+                        }
                 }
         }
-        console.log(document.querySelectorAll(".-yes"))
 }
