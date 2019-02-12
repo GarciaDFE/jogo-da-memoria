@@ -4,7 +4,7 @@
 (function() {
     const $root = document.querySelector("#root");
     const $cardsWrapper = createCardsWrapper();
-    const createMemoryCard = memoryCard() /* retorna a possibilidade de criar cards */
+    const createMemoryCard = memoryCard.new(); /* retorna a possibilidade de criar cards */
 
     const $memoryCardC = createMemoryCard({
         src: "img/icon-c.png", 
@@ -15,7 +15,7 @@
     const $memoryCardJS = createMemoryCard({
         src: "img/icon-js.png", 
         alt: "imagem do livro de Javascript", 
-        nameClass: "-front" 
+        nameClass: "-front"
     });
 
     const $memoryCardJava = createMemoryCard({
