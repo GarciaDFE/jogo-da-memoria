@@ -6,14 +6,37 @@ const startBtn = (function() {
       const $style = document.createElement("style")
       $style.textContent = `
          .start-btn {
-            background-color: #3a4042;
-            height: 40px;
-            width: 100px;
+            position: relative;
             text-align: center;
             font-family: 'Comfortaa', sans-serife;
-            border-radius: 20px;
-            margin-top: -20px;
+            text-indent: -9999px;
+
+            height: 70px;
+            width: 70px;
+
+            background-color: #fffcee;
+            box-shadow: 0 5px 15px 0 rgba(0,0,0, 0.40);
+            border-radius: 50%;
+            opacity: 0.8;
+
+            margin-top: -50px;
             z-index: 1;
+            cursor: pointer;
+         }
+         .start-btn::before {
+            content: '';
+            border-style: solid;
+            border-width: 15px 17px;
+            border-color: transparent transparent transparent #f25a70;
+            position: absolute;
+
+            height: 0;
+            width: 0;
+            top: 22px;
+            left: 28px;
+         }
+         .start-btn:hover {
+            opacity: 1;
          }
          .start-btn > .play {
             line-height: 40px;
