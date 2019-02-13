@@ -6,6 +6,8 @@
     const $cardsWrapper = createCardsWrapper();
     const createMemoryCard = memoryCard.create(); /* retorna a possibilidade de criar cards */
 
+    const $pointBar = pointBar.create();/* criar a barra de pontuação */
+
     const $memoryCardC = createMemoryCard({
         src: "img/icon-c.png", 
         alt: "imagem do livro de C++", 
@@ -73,6 +75,7 @@
     });
 
     $root.insertAdjacentElement("beforeend", $cardsWrapper);
+    $root.insertAdjacentHTML("afterbegin", $pointBar);
 
     $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS)
     $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
