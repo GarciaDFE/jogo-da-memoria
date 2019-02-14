@@ -1,6 +1,6 @@
 const pointBar = (function() {
    const module = {}
-
+   let points = 0;
    module._style = function() {
       const $head = document.querySelector("head")
       const $style = document.createElement("style")
@@ -24,12 +24,12 @@ const pointBar = (function() {
 
    module.create = () => {
       module._style();
-
+      console.log(store.points)
       return `
          <header class="point-bar">
-            <span class="number">0</span>
+            <span class="number">${store.points}</span>
          </header>
-      `
+      `;
    }
 
    return {
