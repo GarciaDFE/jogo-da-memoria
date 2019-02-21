@@ -47,21 +47,32 @@ const startBtn = (function() {
             font-weight: bold;
             text-decoration: none;
          }
+         .start-btn.-playing {
+            display: none;
+         }
       `;
       $head.insertBefore($style, null)
    }
+
+   module.handleClick = () => {
+     const $startBtn = document.querySelector(".start-btn");
+     const $coverGame = document.querySelector(".cover-game");
+     $startBtn.classList.add("-playing");
+     $coverGame.classList.add("-playing");
+   };
 
    module.render = () => {
       module._style();
 
       return `
-         <buttom class="start-btn">
+         <buttom class="start-btn" onclick="startBtn.handleClick()">
             <a href="#" class="play">Start</a>
          </buttom>
-      `
+      `;
    }
 
    return {
-      render: module.render
+      render: module.render,
+      handleClick: module.handleClick
    }
 })();

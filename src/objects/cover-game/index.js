@@ -23,7 +23,13 @@ const coverGame = (function () {
             text-align: center;
             color: #fffcee;
             line-height: 100vh;
-        }`;
+        }
+        
+        .cover-game.-playing {
+            display: none;
+        }
+
+        `;
 
         $head.insertBefore($style, null)
     }
