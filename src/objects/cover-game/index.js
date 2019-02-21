@@ -26,6 +26,10 @@ const coverGame = (function () {
         }
         
         .cover-game.-playing {
+            opacity: 0;
+            transition: opacity 1s linear;
+        }
+        .cover-game.-playing.-semfoco {
             display: none;
         }
 

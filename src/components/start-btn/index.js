@@ -48,9 +48,14 @@ const startBtn = (function() {
             text-decoration: none;
          }
          .start-btn.-playing {
+            opacity: 0;
+            transition: opacity 1s linear;
+         }
+         .start-btn.-playing.-semfoco {
             display: none;
          }
-      `;
+         `;
+
       $head.insertBefore($style, null)
    }
 
@@ -59,6 +64,11 @@ const startBtn = (function() {
      const $coverGame = document.querySelector(".cover-game");
      $startBtn.classList.add("-playing");
      $coverGame.classList.add("-playing");
+     setTimeout(() => {
+        $startBtn.classList.add("-semfoco");
+        $coverGame.classList.add("-semfoco");
+     }, 1000);
+
    };
 
    module.render = () => {
