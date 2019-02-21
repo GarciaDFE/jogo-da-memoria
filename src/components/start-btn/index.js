@@ -6,28 +6,29 @@ const startBtn = (function() {
       const $style = document.createElement("style")
       $style.textContent = `
          .start-btn {
-            position: relative;
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
             text-align: center;
             font-family: 'Comfortaa', sans-serife;
             text-indent: -9999px;
 
-            height: 70px;
-            width: 70px;
-
-            background-color: #fffcee;
-            box-shadow: 0 5px 15px 0 rgba(0,0,0, 0.40);
+            background-color: #2ed573;
+            box-shadow: 0 5px 15px 0 rgba(0,0,0, 0.4);
             border-radius: 50%;
             opacity: 0.8;
 
-            margin-top: -50px;
-            z-index: 1;
             cursor: pointer;
          }
          .start-btn::before {
             content: '';
             border-style: solid;
             border-width: 15px 17px;
-            border-color: transparent transparent transparent #f25a70;
+            border-color: transparent transparent transparent #fffcee;
             position: absolute;
 
             height: 0;
@@ -50,7 +51,7 @@ const startBtn = (function() {
       $head.insertBefore($style, null)
    }
 
-   module.create = () => {
+   module.render = () => {
       module._style();
 
       return `
@@ -61,6 +62,6 @@ const startBtn = (function() {
    }
 
    return {
-      create: module.create
+      render: module.render
    }
 })();

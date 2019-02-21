@@ -1,5 +1,4 @@
-let qtdeMemoryCardActive = 0; 
-let qtdeMemoryCardCorrect = 0
+let qtdeMemoryCardActive = 0
 let qtdeToGame = 0
 
 function createCardsWrapper() {
@@ -28,11 +27,6 @@ function createCardsWrapper() {
 
     $cardsWrapper.addEventListener("click", () => {
         qtdeMemoryCardActive = $cardsWrapper.querySelectorAll(".memory-card.-active").length;
-        qtdeMemoryCardCorrect = $cardsWrapper.querySelectorAll(".memory-card.-score").length;
-        store.points = qtdeMemoryCardCorrect * 10
-        
-        const $counter = document.querySelector(".point-bar .number")
-        $counter.innerText = store.points;
     });
     
     return $cardsWrapper
