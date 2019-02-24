@@ -7,15 +7,12 @@ const coverGame = (function () {
         $style.textContent = `
         .cover-game {
             position: absolute;
-            display: block;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background-color: #626262;
             opacity: 0.95;
-            left:0;
             top:0;
         }
-        
         .cover-game > .title {
             font-family: 'Comfortaa', sans-serife;
             font-size: 40px;
@@ -24,15 +21,6 @@ const coverGame = (function () {
             color: #fffcee;
             line-height: 100vh;
         }
-        
-        .cover-game.-playing {
-            opacity: 0;
-            transition: opacity 1s linear;
-        }
-        .cover-game.-playing.-semfoco {
-            display: none;
-        }
-
         `;
 
         $head.insertBefore($style, null)
@@ -42,9 +30,9 @@ const coverGame = (function () {
         module._style();
 
         return `
-         <section class="cover-game">
+         <div class="cover-game">
             <h1 class="title">Jogo da Memória</h1>
-         </section>
+         </div>
       `
     }
 

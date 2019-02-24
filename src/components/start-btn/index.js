@@ -13,9 +13,15 @@ const startBtn = (function() {
             left: 50%;
             transform: translateX(-50%);
 
+            line-height: 70px;
+            text-align: inherit;
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+
             text-align: center;
             font-family: 'Comfortaa', sans-serife;
-            text-indent: -9999px;
 
             background-color: #2ed573;
             box-shadow: 0 5px 15px 0 rgba(0,0,0, 0.4);
@@ -24,65 +30,23 @@ const startBtn = (function() {
 
             cursor: pointer;
          }
-         .start-btn::before {
-            content: '';
-            border-style: solid;
-            border-width: 15px 17px;
-            border-color: transparent transparent transparent #fffcee;
-            position: absolute;
-
-            height: 0;
-            width: 0;
-            top: 22px;
-            left: 28px;
-         }
          .start-btn:hover {
             opacity: 1;
-         }
-         .start-btn > .play {
-            line-height: 40px;
-            text-align: inherit;
-            font-size: 20px;
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-         }
-         .start-btn.-playing {
-            opacity: 0;
-            transition: opacity 1s linear;
-         }
-         .start-btn.-playing.-semfoco {
-            display: none;
          }
          `;
 
       $head.insertBefore($style, null)
    }
 
-   module.handleClick = () => {
-     const $startBtn = document.querySelector(".start-btn");
-     const $coverGame = document.querySelector(".cover-game");
-     $startBtn.classList.add("-playing");
-     $coverGame.classList.add("-playing");
-     setTimeout(() => {
-        $startBtn.classList.add("-semfoco");
-        $coverGame.classList.add("-semfoco");
-     }, 1000);
-
-   };
-
-   module.render = () => {
+   module.render = content => {
       module._style();
 
       return `
-         <buttom class="start-btn" onclick="startBtn.handleClick()">
-            <a href="#" class="play">Start</a>
-         </buttom>
+         <buttom class="start-btn">${content}</buttom>
       `;
    }
 
    return {
-      render: module.render,
-      handleClick: module.handleClick
+      render: module.render
    }
 })();
