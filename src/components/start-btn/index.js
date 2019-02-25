@@ -33,7 +33,12 @@ const startBtn = (function() {
          .start-btn:hover {
             opacity: 1;
          }
-         `;
+         .start-btn.-disable {
+            opacity: 0;
+            transform: scale(2.5) translateX(-20%);
+            transform-origin: bottom center;
+            transition: opacity 300ms linear, transform 300ms linear;
+         }`;
 
       $head.insertBefore($style, null)
    }

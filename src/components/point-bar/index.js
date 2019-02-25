@@ -17,8 +17,7 @@ const pointBar = (function() {
             font-size: 20px;
             color: #fff;
             font-weight: bold;
-         }
-      `;
+         }`;
       $head.insertBefore($style, null);
    }
 
@@ -27,8 +26,7 @@ const pointBar = (function() {
       return `
          <header class="point-bar">
             <span class="number">0</span>
-         </header>
-      `;
+         </header>`;
    }
 
    return {

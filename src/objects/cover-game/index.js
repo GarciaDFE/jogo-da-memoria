@@ -21,7 +21,10 @@ const coverGame = (function () {
             color: #fffcee;
             line-height: 100vh;
         }
-        `;
+        .cover-game.-disable {
+            opacity: 0;
+            transition: opacity 300ms 300ms linear;
+         }`;
 
         $head.insertBefore($style, null)
     }
@@ -32,8 +35,7 @@ const coverGame = (function () {
         return `
          <div class="cover-game">
             <h1 class="title">Jogo da Memória</h1>
-         </div>
-      `
+         </div>`
     }
 
     return {
