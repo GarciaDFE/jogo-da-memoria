@@ -9,7 +9,7 @@ const startBtn = (function() {
             position: absolute;
             width: 70px;
             height: 70px;
-            bottom: 0;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
 
@@ -35,7 +35,7 @@ const startBtn = (function() {
          }
          .start-btn.-disable {
             opacity: 0;
-            transform: scale(2.5) translateX(-20%);
+            transform: translateX(-50%) scale(2);
             transform-origin: bottom center;
             transition: opacity 300ms linear, transform 300ms linear;
          }`;
