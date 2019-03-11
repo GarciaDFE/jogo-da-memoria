@@ -76,10 +76,10 @@ const headerLogin = (function () {
             font-weight: bold;
             font-family: inherit;
             border: none;
+            color: #3A4042;
             border-bottom: 1px rgba(58,64,66, 0.5) solid;
             line-height: 35px;
             margin-bottom: 40px;
-            color: #3A4042;
          }
          .wrap-form .inputs.-pwd {
             background-image: url("../../img/hidden.svg");
