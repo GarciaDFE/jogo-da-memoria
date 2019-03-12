@@ -17,14 +17,29 @@ const flatButton = (function () {
             color: #FFFCEE;
             text-align: center;
             border: none;
-         }`;
+         }
+         .flat-button > .-login {
+
+         }
+         .flat-button > .-login.-active {
+
+         }
+         .flat-button > .-signup {
+            
+         }
+         .flat-button > .-signup.-active {
+            
+         }
+         
+         `;
       $head.insertBefore($style, null);
    }
 
-   module.render = () => {
+   module.render = content => {
       module._style();
+      
       return `
-         <button class="flat-button">Log in</button>
+         <button class="flat-button">${content}</button>
       `;
    }
 
