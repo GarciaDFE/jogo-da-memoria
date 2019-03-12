@@ -6,7 +6,7 @@ const flatButton = (function () {
       const $style = document.createElement("style")
       $style.textContent = `
          .flat-button {
-            display: block;
+            display: inline-block;
             background-color: #eae6da;
             width: 186px;
             height: 176px;
