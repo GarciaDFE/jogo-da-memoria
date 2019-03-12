@@ -7,39 +7,37 @@ const flatButton = (function () {
       $style.textContent = `
          .flat-button {
             display: inline-block;
-            background-color: #eae6da;
             width: 186px;
             height: 176px;
-
             font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
-            color: #FFFCEE;
             text-align: center;
             border: none;
+            cursor: pointer;
          }
-         .flat-button > .-login {
+         .flat-button.-normal {
+            color: #FFFCEE;
+            background-color: #eae6da;
+         }
+         .flat-button.-normal:hover {
+            color: #FFFFFF;
+            background-color: #f25a70;            
+         }
+         .flat-button.-active {
+            color: #FFFFFF;
+            background-color: #f25a70;            
+         }`;
 
-         }
-         .flat-button > .-login.-active {
-
-         }
-         .flat-button > .-signup {
-            
-         }
-         .flat-button > .-signup.-active {
-            
-         }
-         
-         `;
       $head.insertBefore($style, null);
+
    }
 
-   module.render = content => {
+   module.render = (content, behavior) => {
       module._style();
       
       return `
-         <button class="flat-button">${content}</button>
+         <button class="flat-button ${behavior}">${content}</button>
       `;
    }
 
