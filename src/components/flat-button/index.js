@@ -29,6 +29,7 @@ const flatButton = (function () {
       $head.insertBefore($style, null);
 
    }
+   // content = "teste" e active = false ==> são formas de setar valor default caso o parâmetro não seja carregado na renderização do elemento
    module.render = (content = "teste", active = false ) => {
       module._id++
       module._style(active)
