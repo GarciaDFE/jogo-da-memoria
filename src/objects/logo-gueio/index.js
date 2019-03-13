@@ -11,12 +11,13 @@ const logoGueio = (function () {
             background-color: #FFF;
             border-radius: 50%;
             text-align: center;
-            // transform: translate(25%, -30%);
+            transform: translateY(-30%);
+            margin-bottom: -70px;
          }
          .logo {
             position: relative;
-            // top: 30%;
-            // transform: translateY(-30%);
+            top: 30%;
+            transform: translateY(-20%);
             width: 171px;
          }
          `;
