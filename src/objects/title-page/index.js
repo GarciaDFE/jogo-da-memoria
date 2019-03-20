@@ -9,14 +9,14 @@ const titlePage = (function () {
             font-size: 24px;
             color: #f25a70;
             text-transform: uppercase;
-            margin-bottom: 60px;
-            text-align: center;
+            letter-spacing: 0.6px;
+            //margin-bottom: 60px;
          }
          `;
       $head.insertBefore($style, null);
    }
 
-   module.render = (content = "Teste") => {
+   module.render = (content = "Title") => {
       module._style();
       return `
              <h1 class="title-page">${content}</h1>
