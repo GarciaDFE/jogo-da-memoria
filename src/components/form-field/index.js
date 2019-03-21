@@ -34,17 +34,31 @@ const formField = (function () {
       $head.insertBefore($style, null);
    }
 
+   module.validate = (input) => {
+      const filter = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/
+      if (input.value.trim().match(filter) == null) {
+            return console.log(false)
+      } else {
+         if (input.value == '') {
+            return console.log(false)
+         } else {
+            return console.log(true)
+         } 
+      }
+   }
+
    module.render = (label, input) => {
-     module._style();
-     return `
+      module._style();
+      return `
          <div class="form-field"> 
             <label class="labels">${label}</label>
-            <input class="inputs" type="email" placeholder="${input}">
+            <input id="email" class="inputs" type="email" placeholder="${input}" onkeyup="formField.validate(this)">
          </div>
          `;
    };
 
    return {
-      render: module.render
-   }
+     render: module.render,
+     validate: module.validate
+   };
 })()
