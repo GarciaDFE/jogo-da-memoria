@@ -10,7 +10,7 @@ const titlePage = (function () {
             color: #f25a70;
             text-transform: uppercase;
             letter-spacing: 0.6px;
-            //margin-bottom: 60px;
+            margin-bottom: 60px;
          }
          `;
       $head.insertBefore($style, null);

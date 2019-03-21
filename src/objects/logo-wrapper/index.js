@@ -13,7 +13,7 @@ const logoWrapper = (function() {
             // color: #000;
             // background-color: #FFF;
             text-align: center;
-            transform: translateY(-25%);
+            transform: translateY(-18%);
          }
          `;
       $head.insertAdjacentElement("beforeend", $style);
