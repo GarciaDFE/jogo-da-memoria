@@ -13,6 +13,7 @@ const formInput = (function() {
             color: #3A4042;
             border-bottom: 2px rgba(58,64,66, 0.5) solid;
             padding: 12px 0;
+            margin-bottom: 29px;
          }
          `;
          $head.insertAdjacentElement("beforeend", $style);
