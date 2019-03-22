@@ -13,6 +13,7 @@
    const $inputPass = formInput.render("*********");
    const $labelCPass = formLabel.render("Confirm password");
    const $inputCPass = formInput.render("*********");
+   const $submitButton = submitButton.render("Submit");
 
    $root.insertAdjacentHTML('beforeend', $LoginButton)
    $root.insertAdjacentHTML('beforeend', $SignupButton)
@@ -25,4 +26,5 @@
    $root.insertAdjacentHTML("beforeend", $inputPass);
    $root.insertAdjacentHTML("beforeend", $labelCPass);
    $root.insertAdjacentHTML("beforeend", $inputCPass);
+   $root.insertAdjacentHTML("beforeend", $submitButton);
 })()
