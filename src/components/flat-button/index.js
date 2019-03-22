@@ -8,10 +8,19 @@ const flatButton = (function () {
       const $style = document.createElement("style")
       $style.textContent = `
          .flat-button-${module._id} {
+            box-sizing: border-box;
+
+            /* solução de botão com tag <button> com suporte ruim para IE
+               display: inline-flex;
+               justify-content: center; */
+
+            /* solução de botão com tag <a> com suporte melhor para browsers antigos */
             display: inline-block;
-            width: 186px;
+            padding-top: 60px;
+            text-decoration: none;
+
+            width: 50%;
             height: 176px;
-            padding-bottom: 25px;
             font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
@@ -37,7 +46,7 @@ const flatButton = (function () {
       module._style(active)
       
       return `<!--
-         --><button class="flat-button-${module._id}">${content}</button><!--
+         --><a href="#" class="flat-button-${module._id}">${content}</a><!--
          -->`;
    }
 

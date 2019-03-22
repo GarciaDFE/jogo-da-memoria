@@ -4,10 +4,13 @@
    const $SignupButton = flatButton.render("Sign Up", true)
    const $logoGueio = logoGueio.render()
    const $titlePage = titlePage.render("Welcome!")
-   const $formField = formField.render("E-mail","example@email.com")
-   const $logoWrapper = logoWrapper.render($logoGueio, $titlePage, $formField)
+   const $logoWrapper = logoWrapper.render($logoGueio, $titlePage)
+   const $formLabel = formLabel.render("E-mail");
+   const $formInput = formInput.render("example@email.com");
 
    $root.insertAdjacentHTML('beforeend', $LoginButton)
    $root.insertAdjacentHTML('beforeend', $SignupButton)
    $root.insertAdjacentHTML('beforeend', $logoWrapper)
+   $root.insertAdjacentHTML("beforeend", $formLabel);
+   $root.insertAdjacentHTML("beforeend", $formInput);
 })()
