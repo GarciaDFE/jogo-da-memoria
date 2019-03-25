@@ -12,6 +12,7 @@ const submitButton = (function () {
             background-color: #f25a70;
             opacity: 0.9;
             border-radius: 24px;
+            cursor: pointer;
 
             font-size: 14px;
             font-weight: bold;
@@ -20,7 +21,6 @@ const submitButton = (function () {
             text-transform: uppercase;
             text-align: center;
 
-            cursor: pointer;
          }
          .submit-button:hover {
             opacity: 1;
