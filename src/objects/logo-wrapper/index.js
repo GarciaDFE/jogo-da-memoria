@@ -7,13 +7,8 @@ const logoWrapper = (function() {
       $style.textContent = `
          .logo-wrapper {
             width: 372px;
-            // display: flex;
-            // flex-direction: column;
-            // align-items: center;
-            // color: #000;
-            // background-color: #FFF;
             text-align: center;
-            transform: translateY(-18%);
+            transform: translateY(-28%);
          }
          `;
       $head.insertAdjacentElement("beforeend", $style);

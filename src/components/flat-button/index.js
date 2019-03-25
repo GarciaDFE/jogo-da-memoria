@@ -10,7 +10,7 @@ const flatButton = (function () {
          .flat-button-${module._id} {
             box-sizing: border-box;
 
-            /* solução de botão com tag <button> com suporte ruim para IE
+            /* solução de botão com tag <button> com suporte ruim para IE e pode dar problema no Chrome também 
                display: inline-flex;
                justify-content: center; */
 
@@ -46,7 +46,7 @@ const flatButton = (function () {
       module._style(active)
       
       return `<!--
-         --><a href="#" class="flat-button-${module._id}">${content}</a><!--
+         --><a href="#" class="flat-button-${module._id}">${content}<a><!--
          -->`;
    }
 

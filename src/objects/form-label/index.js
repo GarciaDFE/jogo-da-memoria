@@ -6,6 +6,7 @@ const formLabel = (function () {
       const $style = document.createElement("style")
       $style.textContent = `
          .form-label {
+            display: block;
             font-family: 'Comfortaa', sans-serife;
             font-size: 16px;
             color: #3A4042;

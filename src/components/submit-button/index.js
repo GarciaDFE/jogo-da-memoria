@@ -7,22 +7,28 @@ const submitButton = (function () {
       $style.textContent = `
          .submit-button {
             height: 48px;
-            width: 302px;
-            border-radius: 24px;
+            width: 100%;
+
             background-color: #f25a70;
             opacity: 0.9;
-            color: #FFF;
+            border-radius: 24px;
+
             font-size: 14px;
             font-weight: bold;
+            color: white;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            text-align: center;
+
             cursor: pointer;
-            margin: 20px 0;
          }
          .submit-button:hover {
             opacity: 1;
          }
-      `;
+         .form-input + .submit-button {
+            margin-top: 45px;
+         }
+     `;
 
       $head.insertBefore($style, null);
 
@@ -31,7 +37,7 @@ const submitButton = (function () {
       module._style()
 
       return `
-         <button class="submit-button type="submit">${content}</button>
+         <input class="submit-button type="submit" value=${content}>
       `;
    }
 
