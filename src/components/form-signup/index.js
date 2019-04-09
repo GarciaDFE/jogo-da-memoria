@@ -3,13 +3,13 @@ const formSignup = (function() {
 
    module._children = () => {
       const $labelUser = formLabel.render("User name");
-      const $inputUser = formInput.render("Name-example");
+      const $inputUser = formInput.render("Name-example", "text");
       const $labelEmail = formLabel.render("E-mail");
-      const $inputEmail = formInput.render("example@email.com");
+      const $inputEmail = formInput.render("example@email.com", "email");
       const $labelPass = formLabel.render("Password");
-      const $inputPass = formInput.render("*********");
+      const $inputPass = formInput.render("*********", "password");
       const $labelCPass = formLabel.render("Confirm password");
-      const $inputCPass = formInput.render("*********");
+      const $inputCPass = formInput.render("*********", "password");
       const $submitButton = submitButton.render("Signup");
 
       return `
