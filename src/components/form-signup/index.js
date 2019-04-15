@@ -3,13 +3,24 @@ const formSignup = (function() {
 
    module._children = () => {
       const $labelUser = formLabel.render("User name");
-      const $inputUser = formInput.render("Name-example", "text");
+      const $inputUser = formInput.render({
+         placeholder: "Name-example"
+      });
       const $labelEmail = formLabel.render("E-mail");
-      const $inputEmail = formInput.render("example@email.com", "email");
+      const $inputEmail = formInput.render({
+         placeholder: "example@email.com",
+         type: "email"
+      });
       const $labelPass = formLabel.render("Password");
-      const $inputPass = formInput.render("*********", "password");
+      const $inputPass = formInput.render({
+         placeholder: "*********",
+         type: "password"
+      });
       const $labelCPass = formLabel.render("Confirm password");
-      const $inputCPass = formInput.render("*********", "password");
+      const $inputCPass = formInput.render({
+         placeholder: "*********",
+         type: "password"
+      });
       const $submitButton = submitButton.render("Signup");
 
       return `
@@ -38,7 +49,7 @@ const formSignup = (function() {
       return `<form class="form-signup" action="" method="POST">${module._children()}</form>`
    }
 
-      return {
-         render: module.render
-      }
+   return {
+      render: module.render
+   }
 })()

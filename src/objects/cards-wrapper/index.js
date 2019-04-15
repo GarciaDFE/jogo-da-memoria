@@ -14,7 +14,7 @@ function createCardsWrapper() {
             justify-content: space-around;
             align-content: flex-start;
             width: 372px;
-            height: 850px;
+            height: 8500px;
             margin: 0 auto;
             border: 1px #dadada solid;
         }

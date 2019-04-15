@@ -21,10 +21,11 @@ const formInput = (function() {
          $head.insertAdjacentElement("beforeend", $style);
    };
 
-   module.render = (input, type) => {
+   module.render = ({ placeholder = "", type = "text" }) => {
       module._style();
+
       return `
-         <input id="email" class="form-input" type="${type}" placeholder="${input}">
+         <input id="email" class="form-input" type="${type}" placeholder="${placeholder}">
          `;
    };
 

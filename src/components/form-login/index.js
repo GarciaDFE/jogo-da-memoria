@@ -3,10 +3,19 @@ const formLogin = (function () {
 
    module._children = () => {
       const $labelEmail = formLabel.render("E-mail");
-      const $inputEmail = formInput.render("example@email.com", "email");
+      const $inputEmail = formInput.render({
+         placeholder: "example@email.com",
+         type: "email"
+      });
       const $labelPass = formLabel.render("Password");
-      const $inputPass = formInput.render("*********", "password");
-      const $forgetLink = forgetLink.render();
+      const $inputPass = formInput.render({
+         placeholder: "*********",
+         type: "password"
+      });
+      const $forgetLink = forgetLink.render({
+         href: "#",
+         content: "Forget password?"
+      });
       const $submitButton = submitButton.render("Login");
 
       return `
@@ -23,7 +32,6 @@ const formLogin = (function () {
       $style.textContent = `
          .form-login {
             display: flex;
-            text-align: right;
             flex-direction: column;
             padding: 0 35px 40px;
          }
