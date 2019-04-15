@@ -14,12 +14,14 @@ const formSignup = (function() {
       const $labelPass = formLabel.render("Password");
       const $inputPass = formInput.render({
          placeholder: "*********",
-         type: "password"
+         type: "password",
+         variation: "hidden"
       });
       const $labelCPass = formLabel.render("Confirm password");
       const $inputCPass = formInput.render({
          placeholder: "*********",
-         type: "password"
+         type: "password",
+         variation: "hidden"
       });
       const $submitButton = submitButton.render("Signup");
 

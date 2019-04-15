@@ -10,7 +10,8 @@ const formLogin = (function () {
       const $labelPass = formLabel.render("Password");
       const $inputPass = formInput.render({
          placeholder: "*********",
-         type: "password"
+         type: "password",
+         variation: "hidden"
       });
       const $forgetLink = forgetLink.render({
          href: "#",
