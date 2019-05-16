@@ -1,7 +1,7 @@
 const formInput = (function() {
    const module = {};
 
-   module._style = () => {
+   module._style = active => {
       const $head = document.querySelector("head");
       const $style = document.createElement("style");
       $style.textContent = `
@@ -13,22 +13,16 @@ const formInput = (function() {
             color: #3A4042;
             border-bottom: 2px rgba(58,64,66, 0.5) solid;
             padding: 12px 0;
-         }
-         .form-input.-bullets {
-
-         }
-         .form-input.-hidden {
-            background-image: url("../../img/hidden1.svg");
             background-repeat: no-repeat;
             background-position: right;
             background-size: 23px;
-            font-size: 22px;
-            letter-spacing: 4px;
             cursor: pointer;
          }
-         .form-input.-hidden:hover,
-         .form-input.-hidden:active {
-            background-image: url("../../img/hidden2.svg");
+         .form-input.-password {
+            background-image: url(${active ? "../../img/show.svg" : "../../img/hidden.svg"});
+         }
+         .form-input.-password:hover {
+            background-image: url("../../img/show.svg");
          }
          .form-input + .form-label {
             margin-top: 29px;
@@ -37,11 +31,14 @@ const formInput = (function() {
          $head.insertAdjacentElement("beforeend", $style);
    };
 
-   module.render = ({ placeholder = "", type = "text", variation = "default" }) => {
-      module._style();
+   module.render = ({ placeholder = "", type = "text", variation = "", active = false}) => {
+      module._style(active);
+      if (type == "password") {
+         variation = "-password";
+      }
 
       return `
-         <input id="email" class="form-input -${variation}" type="${type}" placeholder="${placeholder}">
+         <input id="email" class="form-input ${variation}" type="${type}" placeholder="${placeholder}" required>
          `;
    };
 
