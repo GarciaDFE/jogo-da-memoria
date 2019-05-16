@@ -1,10 +1,10 @@
 const formInput = (function() {
-   const module = {};
+  const module = {};
 
-   module._style = active => {
-      const $head = document.querySelector("head");
-      const $style = document.createElement("style");
-      $style.textContent = `
+  module._style = active => {
+    const $head = document.querySelector("head");
+    const $style = document.createElement("style");
+    $style.textContent = `
          .form-input {
             display: block;
             width: 100%;
@@ -18,32 +18,27 @@ const formInput = (function() {
             background-size: 23px;
             cursor: pointer;
          }
-         .form-input.-password {
-            background-image: url(${active ? "../../img/show.svg" : "../../img/hidden.svg"});
-         }
-         .form-input.-password:hover {
-            background-image: url("../../img/show.svg");
-         }
          .form-input + .form-label {
             margin-top: 29px;
          }
          `;
-         $head.insertAdjacentElement("beforeend", $style);
-   };
+    $head.insertAdjacentElement("beforeend", $style);
+  };
 
-   module.render = ({ placeholder = "", type = "text", variation = "", active = false}) => {
-      module._style(active);
-      if (type == "password") {
-         variation = "-password";
-      }
+  module.render = ({ id = "", placeholder = "", type = "text" }) => {
+    module._style();
 
-      return `
-         <input id="email" class="form-input ${variation}" type="${type}" placeholder="${placeholder}" required>
+    return `
+         <input 
+         id="${id}" 
+         class="form-input" 
+         type="${type}" 
+         placeholder="${placeholder}" 
+         required>
          `;
-   };
+  };
 
-
-   return {
-      render: module.render,
-   };
+  return {
+    render: module.render
+  };
 })();
