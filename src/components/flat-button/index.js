@@ -37,7 +37,10 @@ const flatButton = (function() {
   };
 
   module.handleClick = path => {
-    window.location.hash = `#/${path}`;
+    // o window. da linha abaixo pode ser inibido
+    // window.location.hash = `#/${path}`;
+    location.hash = `#/${path}`;
+    location.reload(true);
   };
 
   // content = "teste" e active = false ==> são formas de setar valor default caso o parâmetro não seja carregado na renderização do elemento
