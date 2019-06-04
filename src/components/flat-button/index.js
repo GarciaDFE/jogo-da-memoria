@@ -36,10 +36,8 @@ const flatButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.handleClick = path => {
-    // o window. da linha abaixo pode ser inibido
-    // window.location.hash = `#/${path}`;
-    location.hash = `#/${path}`;
+  module.handleClick = () => {
+    location.hash = `#/login`;
     location.reload(true);
   };
 

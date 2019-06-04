@@ -6,9 +6,11 @@ const game = function() {
   const $cardsWrapper = createCardsWrapper();
   const createMemoryCard = memoryCard.create(); /* retorna a possibilidade de criar cards */
 
-  const $pointBar = pointBar.create(); /* criar a barra de pontuação */
+  const $pointBar = pointBar.create(); /* cria a barra de pontuação */
+  const $backBtn = backBtn.render("Back"); /* cria o botão voltar ao login */
   const $layerStart = layerStart.render(
-    "Start"
+    "Start",
+    "Back"
   ); /* criar o conjunto da cover-game + o start-btn */
 
   const $memoryCardC = createMemoryCard({
@@ -87,6 +89,7 @@ const game = function() {
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $backBtn);
 
   $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
