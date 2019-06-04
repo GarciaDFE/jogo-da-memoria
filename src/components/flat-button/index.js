@@ -1,24 +1,20 @@
-const flatButton = (function () {
-   const module = {}
+const flatButton = (function() {
+  const module = {};
 
-   module._id = 0
+  module._id = 0;
 
-   module._style = active => {
-      const $head = document.querySelector("head")
-      const $style = document.createElement("style")
-      $style.textContent = `
+  module._style = active => {
+    const $head = document.querySelector("head");
+    const $style = document.createElement("style");
+
+    $style.textContent = `
          .flat-button-${module._id} {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-
-            /* solução de botão com tag <button> com suporte ruim para IE e pode dar problema no Chrome também 
-               display: inline-flex;
-               justify-content: center; */
-
-            /* solução de botão com tag <a> com suporte melhor para browsers antigos */
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
             padding-top: 60px;
-            text-decoration: none;
-
             width: 50%;
             height: 176px;
             font-size: 24px;
@@ -37,20 +33,29 @@ const flatButton = (function () {
          }
       `;
 
-      $head.insertBefore($style, null);
+    $head.insertAdjacentElement("beforeend", $style);
+  };
 
-   }
-   // content = "teste" e active = false ==> são formas de setar valor default caso o parâmetro não seja carregado na renderização do elemento
-   module.render = (content = "teste", active = false ) => {
-      module._id++
-      module._style(active)
-      
-      return `<!--
-         --><a href="#" class="flat-button-${module._id}">${content}<a><!--
+  module.handleClick = path => {
+    window.location.hash = `#/${path}`;
+  };
+
+  // content = "teste" e active = false ==> são formas de setar valor default caso o parâmetro não seja carregado na renderização do elemento
+  module.render = (content = "teste", active = false, path = "") => {
+    module._id++;
+    module._style(active);
+
+    return `<!--
+         --><button 
+         class="flat-button-${module._id}" 
+         onclick="flatButton.handleClick('${path}')">
+            ${content}
+         </button><!--
          -->`;
-   }
+  };
 
-   return {
-      render: module.render
-   }
+  return {
+    render: module.render,
+    handleClick: module.handleClick
+  };
 })();

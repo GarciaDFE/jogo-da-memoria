@@ -15,17 +15,39 @@ const formEye = (function() {
          width: 24px;
          height: 15px;
          cursor: pointer;
-         //background-image: url({$active ? "../../img/eye-show.svg" : "../../img/eye-hidden.svg"});
+         opacity: 0.5;
+         transition: opacity 200ms linear;
+         margin-left: auto;
+         transform: translateY(-140%);
       }
-      //.form-eye:hover {
-      //   background-image: url("../../img/eye-show.svg");
-      //}
+      .form-eye.-active {
+         opacity: 1;
+      }
       `;
 
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.handleClick = () => {};
+  module.handleClick = function() {
+    const attrFor = this.getAttribute("for");
+    const $input = document.querySelector(`#${attrFor}`);
+
+    // Opções a escolher para mostrar senha usando IF COMUM ou IF TERNÁRIO
+
+    // COM IF COMUM
+    if ($input.getAttribute("type") === "text") {
+      this.classList.remove("-active");
+      $input.setAttribute("type", "password");
+    } else {
+      this.classList.add("-active");
+      $input.setAttribute("type", "text");
+    }
+
+    // COM IF TERNÁRIO
+    // $input.getAttribute("type") === "text"
+    //   ? $input.setAttribute("type", "password")
+    //   : $input.setAttribute("type", "text");
+  };
 
   module.render = ({ attrFor = "" }) => {
     module._style();
@@ -34,7 +56,7 @@ const formEye = (function() {
       <label 
         for="${attrFor}"
         class="form-eye" 
-        onClick="formEye.handleClick()">Mostrar senha</label>
+        onClick="formEye.handleClick.bind(this)()">Mostrar senha</label>
       `;
   };
 

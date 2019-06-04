@@ -10,7 +10,7 @@ const formLogin = (function() {
     const $labelPass = formLabel.render("Password");
     const $inputPass = formInput.render({
       id: "password",
-      placeholder: "********",
+      placeholder: "8 digits",
       type: "password"
     });
     const $eyePass = formEye.render({ attrFor: "password" });
@@ -18,7 +18,10 @@ const formLogin = (function() {
       href: "#",
       content: "Forget password?"
     });
-    const $submitButton = submitButton.render("Login");
+    const $submitButton = submitButton.render({
+      content: "Login",
+      path: "game"
+    });
 
     return `
          ${$labelEmail + $inputEmail}
@@ -37,7 +40,7 @@ const formLogin = (function() {
             display: flex;
             flex-direction: column;
             padding: 0 35px 40px;
-         }
+         
       `;
     $head.insertAdjacentElement("beforeend", $style);
   };
