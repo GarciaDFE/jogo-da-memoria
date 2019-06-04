@@ -77,19 +77,18 @@ const game = function() {
     nameClass: ""
   });
 
-  $root.insertAdjacentElement("beforeend", $cardsWrapper);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
+
   $root.insertAdjacentHTML("afterbegin", $pointBar);
-
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardC);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);
-
+  $root.insertAdjacentElement("beforeend", $cardsWrapper);
   $root.insertAdjacentHTML("beforeend", $layerStart);
 };
