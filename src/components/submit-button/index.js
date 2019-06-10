@@ -33,42 +33,43 @@ const submitButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
+  module._validaEmail = () => {
+    const $email = document.querySelector('input[type="email"]');
+    const $msgEmail = document.querySelector('p[id="email"]');
+    const emailValue = $email.value;
+    const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    if (emailValue.match(mailFormat)) {
+      $msgEmail.classList.remove("-show");
+      return true;
+    } else {
+      $msgEmail.classList.add("-show");
+      return false;
+    }
+  };
+
+  module._validaSenha = () => {
+    const $pass = document.querySelector('input[type="password"]').value;
+    const $msgPass = document.querySelector('p[id="password"]');
+    const numDig = $pass.length;
+
+    if (numDig >= 8) {
+      $msgPass.classList.remove("-show");
+      return true;
+    } else {
+      $msgPass.classList.add("-show");
+      return false;
+    }
+  };
+
   module.handleClick = (event, path) => {
-    if (module._validInput()) {
-      event.preventDefault();
+    module._validaEmail();
+    module._validaSenha();
+    event.preventDefault();
+    if (module._validaEmail() && module._validaSenha()) {
       location.hash = `#/${path}`;
       location.reload(true);
     }
-  };
-
-  module._validInput = () => {
-    const $email = document.querySelector('input[type="email"]');
-    const $pass = document.querySelector('input[type="password"]');
-    module._validaEmail($email);
-    module._validaSenha($pass);
-    if (module._validaEmail() && module._validaSenha()) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  module._validaEmail = $email => {
-    const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if ($email.value) {
-      return true;
-    } else {
-      $email.insertAdjacentElement(
-        "beforeend",
-        "<p class='msg-error'>${msg}</p>"
-      );
-
-      return false;
-    }
-  };
-
-  module._validaSenha = pass => {
-    pass.lenght = 8 ? true : false;
   };
 
   module.render = ({ content = "", path = "" }) => {

@@ -18,29 +18,15 @@ const formInput = (function() {
             background-size: 23px;
             cursor: pointer;
          }
-         .msg-error + .form-label {
+         .form-input + .form-label {
             margin-top: 29px;
-         }
-         .msg-error {
-           display: block;
-            font-size: 15px;
-            color: #F25A70;
-            margin-top: 5px;
-         }
-         .-show {
-            display: block;
          }
          `;
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = ({ id = "", placeholder = "", type = "text", msg = "" }) => {
+  module.render = ({ id = "", placeholder = "", type = "text" }) => {
     module._style();
-    if (type === "email") {
-      msg = "* Digite um e-mail válido!";
-    } else {
-      msg = "* Digite uma senha válida!";
-    }
 
     return `
          <input 
@@ -49,7 +35,6 @@ const formInput = (function() {
          type="${type}" 
          placeholder="${placeholder}" 
          required>
-         <p class="msg-error">${msg}</p>
          `;
   };
 

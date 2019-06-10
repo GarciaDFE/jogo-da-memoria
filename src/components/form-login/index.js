@@ -7,12 +7,14 @@ const formLogin = (function() {
       placeholder: "example@email.com",
       type: "email"
     });
+    const $msgErrorEmail = msgError.render("email");
     const $labelPass = formLabel.render("Password");
     const $inputPass = formInput.render({
       id: "password",
       placeholder: "8 digits",
       type: "password"
     });
+    const $msgErrorPass = msgError.render("password");
     const $eyePass = formEye.render({ attrFor: "password" });
     const $forgetLink = forgetLink.render({
       href: "#",
@@ -24,8 +26,8 @@ const formLogin = (function() {
     });
 
     return `
-         ${$labelEmail + $inputEmail}
-         ${$labelPass + $inputPass}
+         ${$labelEmail + $inputEmail + $msgErrorEmail}
+         ${$labelPass + $inputPass + $msgErrorPass}
          ${$eyePass}
          ${$forgetLink}
          ${$submitButton}
