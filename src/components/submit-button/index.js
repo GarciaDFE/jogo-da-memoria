@@ -34,9 +34,41 @@ const submitButton = (function() {
   };
 
   module.handleClick = (event, path) => {
-    event.preventDefault();
-    location.hash = `#/${path}`;
-    location.reload(true);
+    if (module._validInput()) {
+      event.preventDefault();
+      location.hash = `#/${path}`;
+      location.reload(true);
+    }
+  };
+
+  module._validInput = () => {
+    const $email = document.querySelector('input[type="email"]');
+    const $pass = document.querySelector('input[type="password"]');
+    module._validaEmail($email);
+    module._validaSenha($pass);
+    if (module._validaEmail() && module._validaSenha()) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  module._validaEmail = $email => {
+    const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if ($email.value) {
+      return true;
+    } else {
+      $email.insertAdjacentElement(
+        "beforeend",
+        "<p class='msg-error'>${msg}</p>"
+      );
+
+      return false;
+    }
+  };
+
+  module._validaSenha = pass => {
+    pass.lenght = 8 ? true : false;
   };
 
   module.render = ({ content = "", path = "" }) => {

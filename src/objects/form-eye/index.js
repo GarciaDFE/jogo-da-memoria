@@ -18,7 +18,7 @@ const formEye = (function() {
          opacity: 0.5;
          transition: opacity 200ms linear;
          margin-left: auto;
-         transform: translateY(-140%);
+         transform: translateY(-150%);
       }
       .form-eye.-active {
          opacity: 1;
