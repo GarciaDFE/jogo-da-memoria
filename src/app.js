@@ -41,4 +41,5 @@
 
   // opção de IF TERNÁRIO melhorada baseado no valor padrão mostrado na opção de IF acima
   paths[hash] ? paths[hash]() : paths["#/404"]();
+  window.onpopstate = () => location.reload(true);
 })();
