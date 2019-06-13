@@ -11,10 +11,9 @@ function createFormsWrapper() {
             justify-content: space-around;
             align-content: flex-start;
             width: 372px;
-            height: 850px;
+            height: auto;
             margin: 0 auto;
             border: 1px #dadada solid;
-            background-color: yellow;
         }`;
 
   $head.insertBefore($style, null);

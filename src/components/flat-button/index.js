@@ -36,8 +36,8 @@ const flatButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.handleClick = () => {
-    location.hash = `#/login`;
+  module.handleClick = path => {
+    location.hash = `#/${path}`;
     location.reload(true);
   };
 
