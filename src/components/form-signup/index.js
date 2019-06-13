@@ -42,7 +42,8 @@ const formSignup = (function() {
     const $style = document.createElement("style");
     $style.textContent = `
          .form-signup {
-            padding: 0 35px 40px;
+            width: 100%;
+            padding:0 35px 40px;
          }
       `;
     $head.insertAdjacentElement("beforeend", $style);

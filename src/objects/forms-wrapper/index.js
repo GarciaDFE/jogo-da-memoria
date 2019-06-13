@@ -8,7 +8,7 @@ function createFormsWrapper() {
         .forms-wrapper {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             align-content: flex-start;
             width: 372px;
             height: auto;

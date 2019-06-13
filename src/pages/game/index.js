@@ -1,17 +1,10 @@
-/* IIFE --> Immediately Invoked Function Express */
-/* envolve todo conteúdo por uma funcion anônima e auto-executável pelos parêntes no final */
-/* aplicada na parte do projeto que só consome outras partes e nunca é acessada por outra parte */
 const game = function() {
   const $root = document.querySelector("#root");
   const $cardsWrapper = createCardsWrapper();
-  const createMemoryCard = memoryCard.create(); /* retorna a possibilidade de criar cards */
-
-  const $pointBar = pointBar.create(); /* cria a barra de pontuação */
-  const $backBtn = backBtn.render("Back"); /* cria o botão voltar ao login */
-  const $layerStart = layerStart.render(
-    "Start",
-    "Back"
-  ); /* criar o conjunto da cover-game + o start-btn */
+  const createMemoryCard = memoryCard.create();
+  const $pointBar = pointBar.create();
+  const $backBtn = backBtn.render("Back");
+  const $layerStart = layerStart.render("Start", "Back");
 
   const $memoryCardC = createMemoryCard({
     src: "img/icon-c.png",
@@ -31,11 +24,11 @@ const game = function() {
     nameClass: "-front"
   });
 
-  const $memoryCardCabeca = createMemoryCard({
-    src: "img/icon-cabeca.png",
-    alt: "imagem do livro de código na cabeça",
-    nameClass: "-front"
-  });
+  // const $memoryCardCabeca = createMemoryCard({
+  //   src: "img/icon-cabeca.png",
+  //   alt: "imagem do livro de código na cabeça",
+  //   nameClass: "-front"
+  // });
 
   const $memoryCardPhp = createMemoryCard({
     src: "img/icon-php.png",
@@ -43,23 +36,23 @@ const game = function() {
     nameClass: "-front"
   });
 
-  const $memoryCardCelular = createMemoryCard({
-    src: "img/icon-celular.png",
-    alt: "imagem do livro sobre UX",
-    nameClass: "-front"
-  });
+  // const $memoryCardCelular = createMemoryCard({
+  //   src: "img/icon-celular.png",
+  //   alt: "imagem do livro sobre UX",
+  //   nameClass: "-front"
+  // });
 
-  const $memoryCardBug = createMemoryCard({
-    src: "img/icon-bug.png",
-    alt: "imagem do livro sobre bug",
-    nameClass: "-front"
-  });
+  // const $memoryCardBug = createMemoryCard({
+  //   src: "img/icon-bug.png",
+  //   alt: "imagem do livro sobre bug",
+  //   nameClass: "-front"
+  // });
 
-  const $memoryCardResponsivo = createMemoryCard({
-    src: "img/icon-responsivo.png",
-    alt: "imagem do livro sobre responsivo",
-    nameClass: "-front"
-  });
+  // const $memoryCardResponsivo = createMemoryCard({
+  //   src: "img/icon-responsivo.png",
+  //   alt: "imagem do livro sobre responsivo",
+  //   nameClass: "-front"
+  // });
 
   const $memoryCardWoman = createMemoryCard({
     src: "img/icon-woman.png",
@@ -67,17 +60,17 @@ const game = function() {
     nameClass: "-front"
   });
 
-  const $memoryCardSettings = createMemoryCard({
-    src: "img/icon-settings.png",
-    alt: "imagem do livro sobre configurações",
-    nameClass: "-front"
-  });
+  // const $memoryCardSettings = createMemoryCard({
+  //   src: "img/icon-settings.png",
+  //   alt: "imagem do livro sobre configurações",
+  //   nameClass: "-front"
+  // });
 
-  const $memoryCardCollab = createMemoryCard({
-    src: "img/icon-collabcode.png",
-    alt: "imagem do galo da CollabCode",
-    nameClass: ""
-  });
+  // const $memoryCardCollab = createMemoryCard({
+  //   src: "img/icon-collabcode.png",
+  //   alt: "imagem do galo da CollabCode",
+  //   nameClass: ""
+  // });
 
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardPhp);

@@ -32,9 +32,6 @@ const formEye = (function() {
     const attrFor = this.getAttribute("for");
     const $input = document.querySelector(`#${attrFor}`);
 
-    // Opções a escolher para mostrar senha usando IF COMUM ou IF TERNÁRIO
-
-    // COM IF COMUM
     if ($input.getAttribute("type") === "text") {
       this.classList.remove("-active");
       $input.setAttribute("type", "password");
@@ -42,11 +39,6 @@ const formEye = (function() {
       this.classList.add("-active");
       $input.setAttribute("type", "text");
     }
-
-    // COM IF TERNÁRIO
-    // $input.getAttribute("type") === "text"
-    //   ? $input.setAttribute("type", "password")
-    //   : $input.setAttribute("type", "text");
   };
 
   module.render = ({ attrFor = "" }) => {

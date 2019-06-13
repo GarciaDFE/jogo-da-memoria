@@ -41,9 +41,10 @@ const formLogin = (function() {
          .form-login {
             display: flex;
             flex-direction: column;
-            padding: 0 35px 40px;
+            width: 100%;
+            padding:0 35px 40px;
          
-      `;
+          `;
     $head.insertAdjacentElement("beforeend", $style);
   };
 

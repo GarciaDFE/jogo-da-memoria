@@ -9,14 +9,13 @@ const flatButton = (function() {
 
     $style.textContent = `
          .flat-button-${module._id} {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
             display: inline-flex;
             justify-content: center;
-            padding-top: 60px;
+            align-items: center;
             width: 50%;
             height: 176px;
+            padding-bottom: 20px;
             font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
@@ -41,7 +40,6 @@ const flatButton = (function() {
     location.reload(true);
   };
 
-  // content = "teste" e active = false ==> são formas de setar valor default caso o parâmetro não seja carregado na renderização do elemento
   module.render = (content = "teste", active = false, path) => {
     module._id++;
     module._style(active);

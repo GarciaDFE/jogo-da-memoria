@@ -1,10 +1,10 @@
-const formLabel = (function () {
-   const module = {}
+const formLabel = (function() {
+  const module = {};
 
-   module._style = () => {
-      const $head = document.querySelector("head")
-      const $style = document.createElement("style")
-      $style.textContent = `
+  module._style = () => {
+    const $head = document.querySelector("head");
+    const $style = document.createElement("style");
+    $style.textContent = `
          .form-label {
             display: block;
             font-family: 'Comfortaa', sans-serife;
@@ -14,17 +14,17 @@ const formLabel = (function () {
             text-align: left;
          }
          `;
-      $head.insertAdjacentElement("beforeend", $style);
-   }
+    $head.insertAdjacentElement("beforeend", $style);
+  };
 
-   module.render = (label) => {
-      module._style();
-      return `
+  module.render = label => {
+    module._style();
+    return `
             <label class="form-label">${label}</label>
          `;
-   };
+  };
 
-   return {
-      render: module.render,
-   };
-})()
+  return {
+    render: module.render
+  };
+})();

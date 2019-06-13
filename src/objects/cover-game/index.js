@@ -1,10 +1,10 @@
-const coverGame = (function () {
-    const module = {}
+const coverGame = (function() {
+  const module = {};
 
-    module._style = function () {
-        const $head = document.querySelector("head")
-        const $style = document.createElement("style")
-        $style.textContent = `
+  module._style = function() {
+    const $head = document.querySelector("head");
+    const $style = document.createElement("style");
+    $style.textContent = `
         .cover-game {
             position: absolute;
             width: 100vw;
@@ -26,19 +26,19 @@ const coverGame = (function () {
             transition: opacity 300ms 300ms linear;
          }`;
 
-        $head.insertBefore($style, null)
-    }
+    $head.insertBefore($style, null);
+  };
 
-    module.render = () => {
-        module._style();
+  module.render = () => {
+    module._style();
 
-        return `
+    return `
          <div class="cover-game">
             <h1 class="title">Jogo da Memória</h1>
-         </div>`
-    }
+         </div>`;
+  };
 
-    return {
-        render: module.render
-    }
+  return {
+    render: module.render
+  };
 })();
