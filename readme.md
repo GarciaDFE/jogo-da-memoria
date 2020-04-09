@@ -30,4 +30,4 @@ Este projeto está sob a licença MIT
 
 ---
 
-Front End e Design UI/UX feito por [Marcial Garcia](https://www.linkedin.com/in/marcial-garcia/)
+Design UI/UX das telas "Log in" e "Sign Up" e o Front End feitos por [Marcial Garcia](https://www.linkedin.com/in/marcial-garcia/)
